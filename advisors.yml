@@ -1,0 +1,23 @@
+advisors:
+    - Gurman Gill
+    - Mark Gondree
+    - Ali Kooshesh
+    - Anamary Leal
+    - Balasubramanian Ravikumar
+    - Suzanne Rivoire
+    - Lynn Stauffer
+    - Shubbhi Taneja
+
+programs:
+    - 189
+
+advisor-fields:
+    - Primary Advisor Name
+    - Secondary Advisor Name
+
+program-fields:
+    - Primary Plan Org
+    - Secondary Plan Org
+    - Minor Org
+
+student-field: ID
