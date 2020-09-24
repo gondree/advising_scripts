@@ -11,14 +11,16 @@ def export_students(advisor, config, sheet):
                 for af in config['advisor-fields']:
                     if prog == row[pf] and row[af] == advisor:
                         id = row[config['student-field']]
-                        print(advisor, "has", row['Last Name'], "("+str(id)+")")
+                        id = str(id).zfill(9)
+                        print(advisor, "has", row['Last Name'], "("+id+")")
                         students.append(id)
 
     path = '_'.join(advisor.split()) + '_students.csv'
     with open(path, 'w', newline='') as f:
-        records = csv.writer(f)
+        # https://stackoverflow.com/questions/3191528/csv-in-python-adding-an-extra-carriage-return-on-windows
+        records = csv.writer(f, lineterminator='\n')
         for id in students:
-            records.writerow(['','',id])
+            records.writerow([id])
 
 
 if __name__ == "__main__":
@@ -50,6 +52,4 @@ if __name__ == "__main__":
 
     for a in config['advisors']:
         export_students(a, config, sheet)
-    
-
     
